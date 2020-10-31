@@ -13,7 +13,7 @@ target 'Like_Instagram' do
   
   pod 'Parse'
   pod 'AlamofireImage'
-  
+ pod "MessageInputBar" 
 
 
   target 'Like_InstagramTests' do

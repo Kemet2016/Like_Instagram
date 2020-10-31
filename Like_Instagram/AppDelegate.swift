@@ -9,9 +9,9 @@ import UIKit
 import Parse
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UIWindowSceneDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -21,8 +21,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     $0.clientKey = "Hig3jocgVNSvSO2VR8fE19qxSxAWkqNgAP3MR2Hg" // <- UPDATE
                     $0.server = "https://parseapi.back4app.com"
             }
-            Parse.initialize(with: parseConfig)
         
+            Parse.initialize(with: parseConfig)
+       
+//        if PFUser.current() != nil {
+//            let main = UIStoryboard(name: "Main", bundle: nil)
+//            let feedNavigationController = main.instantiateViewController(identifier: "FeedNavigationController")
+//
+//            window?.rootViewController = feedNavigationController
+//        }
         
         return true
     }
@@ -40,6 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+    
 
 
 }
